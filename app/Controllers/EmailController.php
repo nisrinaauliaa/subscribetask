@@ -6,28 +6,33 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\EmailModel;
 
-class Email extends BaseController
+class EmailController extends BaseController
 {
+    public function __construct()
+    {
+        $this->emailModel = new EmailModel();
+    }
+
     public function index()
     {
         return view('subscribe/form');
     }
 
-     public function berhasil()
-    {
-        return view('subscribe/berhasil');
-    }
+    // public function berhasil()
+    // {
+    //     return view('subscribe/berhasil');
+    // }
 
-    public function gagal()
-    {
-        return view('subscribe/gagal');
-    }
+    // public function gagal()
+    // {
+    //     return view('subscribe/gagal');
+    // }
 
     public function create()
     {
         try{
             $validation=$this->validate([
-                'email'=>'is_unique[emails.email]',
+                'email'=>'is_unique[email.email]',
             ],
         );
        if(!$validation){

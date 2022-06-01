@@ -16,7 +16,7 @@
       <h1><span style="color: #FFC30B;"> SUBSCRIBE</span> to get the latest news!</h1>
   </div>
 
-  <form class="row g-3" style="justify-content:center; margin:2cm" action="/email/create" method="POST">
+  <form class="row g-3" style="justify-content:center; margin:2cm" action="EmailController/create" method="POST">
   <div class="col-auto" style="width: 30rem;">
     <input name="email" type="email" class="form-control" id="email" placeholder="example@mail.com" autofocus>
   </div>
